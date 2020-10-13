@@ -15,12 +15,6 @@ def save_frame_camera_cycle(device_num, dir_path, basename, cycle, ext='jpg', de
     os.makedirs(dir_path, exist_ok=True)
     base_path = os.path.join(dir_path, basename)
 
-    # サービスアカウントのクレデンシャルがおいてあるフルパス
-    credential_path = sys.argv[1]
-
-    # サービスアカウントキーへのパスを通す
-    os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = credential_path
-
     client = vision.ImageAnnotatorClient()
 
     likelihood_name = ('UNKNOWN', 'VERY_UNLIKELY', 'UNLIKELY', 'POSSIBLE',
