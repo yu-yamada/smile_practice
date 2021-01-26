@@ -3,7 +3,7 @@ import sys
 import datetime
 import cv2
 from google.cloud import vision
-from google.cloud.vision import types
+from google.cloud.vision_v1 import types
 import io
 
 def save_frame_camera_cycle(device_num, dir_path, basename, cycle, ext='jpg', delay=1, window_name='frame'):
